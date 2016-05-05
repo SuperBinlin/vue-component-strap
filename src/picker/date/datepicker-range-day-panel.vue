@@ -37,7 +37,8 @@ Time: 13:52-->
                                               :start-day.sync="startDay"
                                               :end-day.sync="endDay"
                                               :selected-dates.sync="selectedDates"
-                                              :is-disabled="isDisabled">
+                                              :is-disabled="isDisabled"
+                                              >
                         </datepicker-range-day>
                     </td>
                 </tr>

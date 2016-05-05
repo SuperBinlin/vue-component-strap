@@ -34,7 +34,7 @@ Time: 17:11-->
                 default:function () {
                     return [];
                 }
-            },
+            }
         },
         computed:{
             "isCurrentMonth":function () {
@@ -102,9 +102,13 @@ Time: 17:11-->
                         index=itemIndex;
                     }
                 });
+
+                this.$dispatch("vue:unselected",dates[index]);
+                
                 if(index >=0 ){
+                    dates[index];
                     dates.splice(index,1);
-                }
+                }                
                 me.selectedDates = dates;
             }
         },

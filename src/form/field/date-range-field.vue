@@ -20,7 +20,9 @@ Time: 14:26-->
                                               :start-day.sync="startDayObj"
                                               :end-day.sync="endDayObj"
                                               :selected-dates.sync="selectedDatesObj"
-                                              :is-disabled="isDisabled">
+                                              :is-disabled="isDisabled"
+                                              @vue:unselected="unselected"
+                                              >
                             </datepicker-range>
                         </div>
                         <div class="ms-datepicker-td ms-btn-next">
@@ -68,6 +70,13 @@ Time: 14:26-->
                 twoWay:true
             },
             "selectedDates":{
+                type:Array,
+                twoWay:true,
+                default:function () {
+                    return [];
+                }
+            },
+            "unselectedDates":{
                 type:Array,
                 twoWay:true,
                 default:function () {
@@ -247,6 +256,11 @@ Time: 14:26-->
                 let me = this;
                 me.startDayObj = new Date();
                 me.endDayObj = new Date();
+            },
+            "unselected":function(time){
+                if(time){
+                    this.unselectedDates.push(time);
+                }
             }
         },
         components:{

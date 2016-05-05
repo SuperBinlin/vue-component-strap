@@ -12,7 +12,8 @@ Time: 17:08-->
                                          :end-day.sync="endDayObj"
                                          :selected-dates.sync="selectedDatesObj"
                                          :is-disabled="isDisabled"
-                                         :date-format="dateFormat">
+                                         :date-format="dateFormat"
+                                         >
                 </datepicker-range-single>
                 <div>
                     <span>
@@ -74,7 +75,7 @@ Time: 17:08-->
                 "calendarShow":false,
                 "startDayObj":null,
                 "endDayObj":null,
-                "selectedDatesObj":[],
+                "selectedDatesObj":[]
             }
         },
         ready(){
